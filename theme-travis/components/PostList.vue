@@ -14,31 +14,31 @@
         :key="item.key"
       >
         <div class="title-wrapper">
-          <h2>
+          <h2 class="title">
             <router-link :to="item.path">{{item.title}}</router-link>
           </h2>
           <div class="article-info">
             <a
               title="作者"
-              class="iconfont tc-yonghutouxiang"
+              class="iconfont tc-avatar"
               target="_blank"
               v-if="item.author && item.author.href"
               :href="item.author.href"
             >{{ item.author.name ? item.author.name : item.author }}</a>
             <span
               title="作者"
-              class="iconfont tc-yonghutouxiang"
+              class="iconfont tc-avatar"
               v-else-if="item.author"
             >{{ item.author.name ? item.author.name : item.author }}</span>
 
             <span
               title="创建时间"
-              class="iconfont tc-rili"
+              class="iconfont tc-timer"
               v-if="item.frontmatter.date"
             >{{ item.frontmatter.date.split(' ')[0]}}</span>
             <span
               title="分类"
-              class="iconfont tc-filefolder"
+              class="iconfont tc-file"
               v-if="$themeConfig.category !== false && item.frontmatter.categories"
             >
               <router-link
@@ -49,7 +49,7 @@
             </span>
             <span
               title="标签"
-              class="iconfont icon-biaoqian tags"
+              class="iconfont tc-tag tags"
               v-if="$themeConfig.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]"
             >
               <router-link
@@ -184,12 +184,32 @@ export default {
         &:hover
           color $accentColor
       h2
+        position: relative;
         margin 0.5rem 0
         font-size 1.4rem
         border none
+        display: inline-block;
         a
           @media (max-width $MQMobile)
             font-weight 400
+          &:after
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $accentColor;
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            transition: .3s ease-in-out;
+          &:hover a
+            color $accentColor
+          &:hover:after
+            visibility visible
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
       .article-info
         > a, > span
           opacity 0.7
@@ -205,6 +225,7 @@ export default {
                 content '/'
         .tags a:not(:first-child)::before
           content '、'
+      
     .excerpt-wrapper
       border-top 1px solid var(--borderColor)
       margin 0.5rem 0

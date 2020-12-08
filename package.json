@@ -11,9 +11,11 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
     "inquirer": "^7.1.0",
     "json2yaml": "^1.1.0",
     "moment": "^2.25.3",
+    "v-dialogs": "^2.1.4",
     "vuepress": "1.5.2",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-baidu-tongji": "^1.0.1",

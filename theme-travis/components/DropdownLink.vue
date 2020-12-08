@@ -15,14 +15,14 @@
         class="link-title"
       >
         <!-- travis for add icon -->
-        <i :class="`iconfont ${item.icon}`"></i>{{ item.text }}
+        <i :class="`iconfont ${item.icon}`" style="font-size:0.9rem"></i>{{ item.text }}
       </router-link>
       <span
         class="title"
         v-show="!item.link"
       >
         <!-- travis for add icon -->
-        <i :class="`iconfont ${item.icon}`"></i> {{ item.text }}
+        <i :class="`iconfont ${item.icon}`" style="font-size:0.9rem"></i> {{ item.text }}
       </span>
       <span
         class="arrow"

@@ -2,11 +2,10 @@
   <div class="categories-wrapper card-box">
     <router-link
       to="/categories/"
-      class="title iconfont icon-wenjianjia"
-      title="全部分类"
-    >{{ length === 'all' ? '全部分类' : '文章分类' }}</router-link>
+      class="title iconfont tc-all-fill"
+    >{{ length === 'all' ? ' 全部分类' : ' 分类' }}</router-link>
 
-    <div class="categories">
+    <!-- <div class="categories">
       <router-link
         :to="`/categories/?category=${encodeURIComponent(item.key)}`"
         v-for="(item, index) in categories"
@@ -21,11 +20,21 @@
         v-if="length !== 'all' && length < categoriesData.length"
         class="more"
       >更多...</router-link>
-    </div>
+    </div> -->
+    <!-- travis: modify categories bar style -->
+    <ul class="category-wrapper">
+      <li class="category-item" v-for="(item, index) in categories" :key="index">
+        <router-link :to="`/categories/?category=${encodeURIComponent(item.key)}`">
+          <span class="category-name">{{ item.key }}</span>
+          <span class="post-num" :style="{ 'backgroundColor': getOneColor() }">{{ item.length }}</span>
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import { getOneColor } from '../util/randomColor'
 export default {
   props: {
     category: {
@@ -49,6 +58,9 @@ export default {
         return this.categoriesData.slice(0, this.length)
       }
     }
+  },
+  methods:{
+    getOneColor
   }
 }
 </script>
@@ -57,9 +69,44 @@ export default {
 .categories-wrapper
   .title
     color var(--textColor)
-    opacity 0.9
-    font-size 1.2rem
-  .categories
+    opacity 1
+    font-size 1.1rem
+  .category-wrapper {
+    list-style none
+    padding-left 0
+    .category-item {
+      margin-bottom .5rem
+      padding: .4rem .8rem;
+      transition: all .5s
+      border-radius .2rem
+      box-shadow var(--boxShadow)
+      background-color var(--mainBg)
+      &:hover {
+        transform scale(1.04)
+        a {
+          color $accentColor
+        }
+      }
+      a {
+        display flex
+        justify-content: space-between
+        color var(--text-color)
+        .post-num {
+          width 1.6rem;
+          height 1.6rem
+          text-align center
+          line-height 1.6rem
+          border-radius .2rem
+          background #eee
+          font-size 13px
+          color #fff
+        }
+      }
+    }
+  }
+</style>
+<!-- vd style
+.categories
     margin-top 0.6rem
     a
       display block
@@ -103,4 +150,4 @@ export default {
         padding-left 0.8rem
         border-radius 1px
         border-color transparent
-</style>
+-->

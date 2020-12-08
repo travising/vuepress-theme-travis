@@ -2,9 +2,8 @@
   <div class="tags-wrapper card-box">
     <router-link
       to="/tags/"
-      class="title iconfont icon-biaoqian1"
-      title="全部标签"
-    >{{ length === 'all' ? '全部标签' : '热门标签' }}</router-link>
+      class="title iconfont tc-tag-fill"
+    >{{ length === 'all' ? ' 全部标签' : ' 标签' }}</router-link>
     <div class="tags">
       <template v-for="(item, index) in tags">
         <router-link
@@ -73,8 +72,8 @@ export default {
 .tags-wrapper
   .title
     color var(--textColor)
-    opacity 0.9
-    font-size 1.2rem
+    opacity 1
+    font-size 1.1rem
   .tags
     text-align justify
     padding 0.8rem 0.5rem 0.5rem 0.5rem

@@ -3,7 +3,7 @@ module.exports = [
   {
     text: '前端',
     link: '/frontend/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
-    icon: 'tc-training-fill',
+    icon: 'tc-frontend-fill',
     items: [
       // 说明：以下所有link的值只是在相应md文件定义的永久链接（不是什么特殊生成的编码）。另外，注意结尾是有斜杠的
       { text: 'Vuepress', link: '/frontend/vuepress/' },
@@ -13,7 +13,7 @@ module.exports = [
   {
     text: '后端',
     link: '/backend/',
-    icon: 'tc-android-fill',
+    icon: 'tc-backend-fill',
     items: [
       { text: 'Flask', link: '/backend/flask/' },
       { text: 'Django', link: '/backend/django/' },
@@ -23,7 +23,7 @@ module.exports = [
   {
     text: '其他',
     link: '/others/',
-    icon: 'tc-camera-fill',
+    icon: 'tc-others-fill',
     items: [
       { text: 'Git', link: '/others/git/' },
     ],
