@@ -2,7 +2,7 @@
   <aside class="blogger-wrapper card-box">
     <div class="avatar">
       <img
-        :src="blogger.avatar"
+        :src="$withBase(blogger.avatar)"
         alt="头像"
         title="看什么看~"
       />

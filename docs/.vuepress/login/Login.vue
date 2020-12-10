@@ -1,7 +1,7 @@
 <template>
   <div class="login-form">
     <div style="margin:0px 0px 30px;text-align:left;">
-      <img :src='imgUrl' style="width: 7rem;">
+      <img :src="$withBase(imgUrl)" style="width: 7rem;">
     </div>
     <div class="form-header">
       <i class="iconfont tc-key tc-icon"></i>Enter password

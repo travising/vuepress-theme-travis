@@ -344,8 +344,8 @@ export default {
         return bannerBg
       } else if (bannerBg.indexOf('.') > -1) { // 大图
         // travis: repalce the bannerBg
-        // return `background: url(${this.$withBase(bannerBg)}) center center / cover no-repeat`
-        return `background: url('/img/bg_galaxy.jpg') center/cover no-repeat`
+        return `background: url(${this.$withBase(bannerBg)}) center center / cover no-repeat`
+        // return `background: url('/img/bg_galaxy.jpg') center/cover no-repeat`
       }
 
     },

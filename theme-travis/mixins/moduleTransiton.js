@@ -5,11 +5,11 @@ export default {
     }
   },
   mounted () {
-    console.log("mt-mounted")
+    // console.log("mt-mounted")
     this.recoShowModule = true
   },
   destroyed () {
-    console.log("mt-destroyed")
+    // console.log("mt-destroyed")
     this.recoShowModule = false
   }
 }
